@@ -87,15 +87,14 @@ export default function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden lg:block">
-          <Link
-            to="contact"
-            smooth={true}
-            offset={-80}
-            duration={500}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeLToDk1eTq2XZtSyEvlM4N-eGyLYFvqdh0fF8AqOepTIrIyQ/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-accentBlue hover:bg-blue-500 text-white font-inter font-semibold text-sm px-5 py-2.5 rounded-lg transition-glow hover:shadow-btnGlow cursor-pointer"
           >
             Join Club
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -134,16 +133,15 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Link
-                to="contact"
-                smooth={true}
-                offset={-80}
-                duration={500}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeLToDk1eTq2XZtSyEvlM4N-eGyLYFvqdh0fF8AqOepTIrIyQ/viewform?usp=publish-editor"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMenu}
                 className="inline-flex items-center justify-center bg-accentBlue hover:bg-blue-500 text-white font-inter font-semibold text-base py-3 rounded-lg transition-glow hover:shadow-btnGlow cursor-pointer mt-2"
               >
                 Join Club
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

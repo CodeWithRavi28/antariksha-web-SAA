@@ -64,7 +64,9 @@ export default function Contact() {
               
               {/* Google Form Button */}
               <a
-                href="#"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeLToDk1eTq2XZtSyEvlM4N-eGyLYFvqdh0fF8AqOepTIrIyQ/viewform?usp=publish-editor"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-accentBlue hover:bg-blue-500 text-white font-inter font-semibold text-base px-8 py-4 rounded-xl transition-glow hover:shadow-btnGlow w-fit mt-2 group"
               >
                 Join the Club

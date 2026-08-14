@@ -4,6 +4,7 @@ import { FiTarget, FiEye, FiUser } from 'react-icons/fi';
 import { FaLinkedin } from 'react-icons/fa';
 import { fadeLeft, fadeRight } from '../../utils/motionVariants';
 import { facultyHead } from '../../data/team';
+import facultyImg from '../../assets/ravi-k-mishra.jpg';
 
 // Interactive/Animated SVG Orbit Illustration
 const OrbitIllustration = () => (
@@ -54,7 +55,7 @@ const OrbitIllustration = () => (
         className="absolute w-20 h-20 rounded-full"
         style={{ background: 'radial-gradient(circle, #fbbf2480 0%, #f59e0b33 50%, transparent 75%)' }}
       />
-      
+
 
       {/* Inner glow ring */}
       <div
@@ -141,39 +142,57 @@ export default function About() {
           </div>
 
           {/* Faculty Advisor Card */}
-          <div className="glass rounded-2xl p-6 mt-4 flex flex-col sm:flex-row gap-4 items-center justify-between border-white/5 shadow-cardGlow">
-            <div className="flex items-center gap-4 flex-col sm:flex-row text-center sm:text-left">
-              {/* Avatar Initials */}
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accentBlue to-accentSky flex items-center justify-center text-white font-space font-bold text-lg">
-                FA
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2 flex-col sm:flex-row">
-                  <h4 className="font-space font-semibold text-textPrimary text-base">
-                    {facultyHead.name}
-                  </h4>
-                  <span className="text-[10px] font-inter font-semibold uppercase bg-accentBlue/20 text-accentSky px-2.5 py-0.5 rounded-full tracking-wide">
-                    {facultyHead.role}
-                  </span>
+          <div className="glass rounded-2xl p-8 mt-4 border border-white/5 shadow-cardGlow relative overflow-hidden">
+            {/* Decorative accent bar */}
+
+
+            <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between pl-4">
+              {/* Left: Avatar + Info */}
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                {/* Avatar */}
+                <div className="relative flex-shrink-0">
+                  <div className="w-28 h-28 rounded-xl border-2 border-accentBlue/60 ring-2 ring-accentBlue/20 overflow-hidden shadow-btnGlow">
+                    <img
+                      src={facultyImg}
+                      alt="Dr. Ravi Kant Mishra"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
                 </div>
-                <p className="font-inter text-xs text-textMuted mt-1">
-                  {facultyHead.department}
-                </p>
+
+                {/* Text Info */}
+                <div className="flex flex-col gap-2 mt-3 sm:mt-0">
+                  <h4 className="font-space font-bold text-textPrimary text-xl leading-tight">
+                    Dr. Ravi Kant Mishra
+                  </h4>
+                  <p className="font-inter text-sm text-accentSky font-medium">
+                    Faculty Head & Club Mentor
+                  </p>
+                  <p className="font-inter text-sm text-accentSky font-medium bg-accentBlue/10 p-1 rounded-lg w-fit">
+                    Professor & Dean(Alumni and Industrial Relation)
+                  </p>
+                  <p className="font-inter text-xs text-textMuted leading-relaxed max-w-sm mt-1">
+                    Faculty advisor and guiding mentor of Antariksha — the Space Astronomy Association, inspiring students to explore the frontiers of space science and technology.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: LinkedIn Button */}
+              <div className="flex-shrink-0 flex items-center sm:items-start mt-2 sm:mt-1">
+                {facultyHead.linkedin && facultyHead.linkedin !== '#' && (
+                  <a
+                    href={facultyHead.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 hover:border-accentBlue/60 text-textMuted hover:text-accentSky transition-colors duration-300 text-xs font-inter font-medium"
+                    aria-label="LinkedIn Profile"
+                  >
+                    <FaLinkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
+                )}
               </div>
             </div>
-
-            {/* Social link */}
-            {facultyHead.linkedin && facultyHead.linkedin !== '#' && (
-              <a
-                href={facultyHead.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-accentBlue/60 text-textMuted hover:text-accentSky transition-colors duration-300"
-                aria-label="LinkedIn Profile"
-              >
-                <FaLinkedin className="w-4 h-4" />
-              </a>
-            )}
           </div>
         </motion.div>
       </div>

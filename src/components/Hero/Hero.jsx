@@ -59,15 +59,14 @@ export default function Hero() {
             variants={fadeUp}
             className="flex flex-row items-center gap-4 mt-8"
           >
-            <Link
-              to="contact"
-              smooth={true}
-              offset={-80}
-              duration={500}
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeLToDk1eTq2XZtSyEvlM4N-eGyLYFvqdh0fF8AqOepTIrIyQ/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-lg font-inter font-semibold text-sm bg-accentBlue hover:bg-blue-500 text-white transition-glow hover:shadow-btnGlow cursor-pointer"
             >
               Join Club
-            </Link>
+            </a>
             <Link
               to="about"
               smooth={true}
