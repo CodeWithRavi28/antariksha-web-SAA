@@ -5,6 +5,7 @@ import { FiUsers } from 'react-icons/fi';
 import MemberCard from './MemberCard';
 import { facultyHead, coreTeam } from '../../data/team';
 import { fadeUp, scaleIn, staggerContainer } from '../../utils/motionVariants';
+import facultyImg from '../../assets/ravi-k-mishra.jpg';
 
 export default function Team() {
   const hasTeam = coreTeam && coreTeam.length > 0;
@@ -38,21 +39,31 @@ export default function Team() {
         >
           <div className="bg-[#0F172A] border border-[#1E293B] hover:border-accentBlue/30 rounded-2xl p-8 max-w-2xl w-full flex flex-col md:flex-row items-center gap-6 text-center md:text-left hover:shadow-cardGlow transition-colors duration-300">
             {/* Faculty Avatar */}
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accentBlue via-[#4f46e5] to-accentSky flex items-center justify-center text-white font-space font-bold text-3xl shadow-lg flex-shrink-0">
-              FA
-            </div>
+            <div className="relative flex-shrink-0">
+                              <div className="w-28 h-28 rounded-xl border-2 border-accentBlue/60 ring-2 ring-accentBlue/20 overflow-hidden shadow-btnGlow">
+                                <img
+                                  src={facultyImg}
+                                  alt="Dr. Ravi Kant Mishra"
+                                  className="w-full h-full object-cover object-top"
+                                />
+                              </div>
+                            </div>
 
             {/* Faculty Details */}
             <div className="flex-grow flex flex-col gap-2">
               <div className="flex flex-col md:flex-row md:items-center gap-2">
                 <h3 className="font-space font-bold text-xl text-textPrimary">
-                  {facultyHead.name}
+                  Dr. Ravi Kant Mishra
                 </h3>
-                <span className="text-[10px] font-inter font-semibold uppercase tracking-wider bg-accentBlue/20 text-accentSky px-3 py-1 rounded-full w-fit mx-auto md:mx-0">
-                  {facultyHead.role}
-                </span>
+                <p className="font-inter text-sm text-accentSky font-medium">
+                  Faculty Head & Club Mentor
+                </p>
+                
               </div>
-              <p className="font-inter text-sm text-textMuted">{facultyHead.department}</p>
+              <p className="font-inter text-xs text-accentSky font-medium bg-accentBlue/10 p-1 rounded-lg w-fit">
+                    Professor & Dean(Alumni and Industrial Relation)
+                  </p>
+              
               <p className="font-inter text-xs text-textMuted italic leading-relaxed mt-1">
                 Guiding students towards space technology excellence, astrophysics research, and scientific outreach.
               </p>
