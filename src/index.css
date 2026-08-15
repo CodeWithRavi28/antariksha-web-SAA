@@ -2,11 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============ Theme Tokens (RGB triplets for Tailwind alpha support) ============ */
+/* Night theme (default) */
+:root {
+  --color-base: 2 6 23;            /* #020617 */
+  --color-surface: 15 23 42;       /* #0F172A */
+  --color-border: 30 41 59;        /* #1E293B */
+  --color-accent-blue: 59 130 246; /* #3B82F6 */
+  --color-accent-sky: 96 165 250;  /* #60A5FA */
+  --color-text-primary: 248 250 252; /* #F8FAFC */
+  --color-text-muted: 148 163 184;   /* #94A3B8 */
+}
+
+/* Day theme */
+.theme-light {
+  --color-base: 248 250 252;       /* #F8FAFC */
+  --color-surface: 255 255 255;    /* #FFFFFF */
+  --color-border: 148 163 184;     /* #94A3B8 — darker so borders stay visible on white */
+  --color-accent-blue: 37 99 235;  /* #2563EB */
+  --color-accent-sky: 29 78 216;   /* #1D4ED8 */
+  --color-text-primary: 15 23 42;  /* #0F172A */
+  --color-text-muted: 71 85 105;   /* #475569 */
+}
+
 @layer base {
   body {
     @apply bg-base text-textPrimary font-inter antialiased overflow-x-hidden;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-space;
   }
@@ -17,29 +40,29 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: rgb(var(--color-base));
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: rgb(var(--color-border));
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: rgb(var(--color-text-muted) / 0.6);
 }
 
 /* Glassmorphism Classes */
 .glass {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgb(var(--color-surface) / 0.4);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(var(--color-border) / 0.35);
 }
 
 .glass-nav {
-  background: rgba(2, 6, 23, 0.75);
+  background: rgb(var(--color-base) / 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgb(var(--color-border) / 0.3);
 }
 
 /* Glowing shadows */
@@ -50,4 +73,14 @@
 /* Smooth transitions */
 .transition-glow {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth theme switching */
+body,
+section,
+footer,
+nav,
+.glass,
+.glass-nav {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }

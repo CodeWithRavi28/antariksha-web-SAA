@@ -23,10 +23,10 @@ export default function DomainCard({ domain, variants }) {
       variants={variants}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
-      className="bg-[#0F172A] border border-[#1E293B] hover:border-accentBlue/40 rounded-2xl p-6 flex flex-col gap-5 hover:shadow-cardGlow transition-colors duration-300"
+      className="bg-surface border border-borderCustom hover:border-accentBlue/40 rounded-2xl p-6 flex flex-col gap-5 hover:shadow-cardGlow transition-colors duration-300"
     >
       {/* Icon Wrapper (Glass Circle) */}
-      <div className="w-16 h-16 rounded-full bg-white/[0.02] border border-white/[0.08] backdrop-blur-md flex items-center justify-center text-accentBlue shadow-inner">
+      <div className="w-16 h-16 rounded-full bg-borderCustom/20 border border-borderCustom/30 backdrop-blur-md flex items-center justify-center text-accentBlue shadow-inner">
         <IconComponent className="w-8 h-8 text-accentBlue" />
       </div>
 

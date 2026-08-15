@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function StarField() {
+export default function StarField({ theme = 'night' }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -9,6 +9,10 @@ export default function StarField() {
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
+    // Day sky: dark slate stars so they clearly stand out on white; Night sky: bright stars
+    const starRGB = theme === 'light' ? '51, 65, 85' : '248, 250, 252';
+    const opacityScale = theme === 'light' ? 0.95 : 1;
 
     let animationFrameId;
     let stars = [];
@@ -65,7 +69,7 @@ export default function StarField() {
 
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(248, 250, 252, ${star.opacity})`;
+        ctx.fillStyle = `rgba(${starRGB}, ${star.opacity * opacityScale})`;
         ctx.fill();
       }
 
@@ -80,7 +84,7 @@ export default function StarField() {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas

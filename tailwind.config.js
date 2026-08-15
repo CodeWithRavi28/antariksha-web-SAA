@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        base: "#020617",
-        surface: "#0F172A",
-        borderCustom: "#1E293B",
-        accentBlue: "#3B82F6",
-        accentSky: "#60A5FA",
-        textPrimary: "#F8FAFC",
-        textMuted: "#94A3B8",
+        base: "rgb(var(--color-base) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        borderCustom: "rgb(var(--color-border) / <alpha-value>)",
+        accentBlue: "rgb(var(--color-accent-blue) / <alpha-value>)",
+        accentSky: "rgb(var(--color-accent-sky) / <alpha-value>)",
+        textPrimary: "rgb(var(--color-text-primary) / <alpha-value>)",
+        textMuted: "rgb(var(--color-text-muted) / <alpha-value>)",
       },
       fontFamily: {
         space: ["'Space Grotesk'", "sans-serif"],

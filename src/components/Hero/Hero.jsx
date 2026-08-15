@@ -5,17 +5,17 @@ import StarField from './StarField';
 import { fadeUp, staggerContainer } from '../../utils/motionVariants';
 import { FiChevronDown } from 'react-icons/fi';
 
-export default function Hero() {
+export default function Hero({ theme = 'night' }) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-[#020617] overflow-hidden px-6 pt-16"
+      className="relative min-h-screen flex items-center justify-center bg-base overflow-hidden px-6 pt-16"
     >
       {/* Starfield background */}
-      <StarField />
+      <StarField theme={theme} />
 
       {/* Radial blue glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-accentBlue/15 blur-[120px] pointer-events-none z-0" />
 
       {/* Content wrapper */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
@@ -72,7 +72,7 @@ export default function Hero() {
               smooth={true}
               offset={-80}
               duration={500}
-              className="px-6 py-3 rounded-lg font-inter font-semibold text-sm border border-white/20 hover:border-accentBlue/60 text-white hover:text-accentSky transition-glow cursor-pointer"
+              className="px-6 py-3 rounded-lg font-inter font-semibold text-sm border border-borderCustom/60 hover:border-accentBlue/60 text-textPrimary hover:text-accentSky transition-glow cursor-pointer"
             >
               About Us
             </Link>
@@ -87,7 +87,7 @@ export default function Hero() {
           smooth={true}
           offset={-80}
           duration={500}
-          className="cursor-pointer text-textMuted hover:text-white transition-colors duration-300"
+          className="cursor-pointer text-textMuted hover:text-textPrimary transition-colors duration-300"
         >
           <motion.div
             animate={{

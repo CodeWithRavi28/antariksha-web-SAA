@@ -12,7 +12,7 @@ const EmptyState = ({ type }) => {
       variants={scaleIn}
       initial="hidden"
       animate="visible"
-      className="glass rounded-2xl p-8 max-w-md mx-auto text-center border-white/5 shadow-cardGlow flex flex-col items-center gap-4 mt-6"
+      className="glass rounded-2xl p-8 max-w-md mx-auto text-center border-borderCustom/25 shadow-cardGlow flex flex-col items-center gap-4 mt-6"
     >
       <div className="w-16 h-16 rounded-full bg-accentBlue/10 border border-accentBlue/25 flex items-center justify-center text-accentBlue mb-2">
         {isUpcoming ? (
@@ -42,7 +42,7 @@ export default function Events() {
   return (
     <section
       id="events"
-      className="relative py-24 bg-[#020617] overflow-hidden px-6 border-t border-white/[0.02]"
+      className="relative py-24 bg-base overflow-hidden px-6 border-t border-borderCustom/15"
     >
       <div className="max-w-4xl mx-auto flex flex-col gap-12">
         {/* Section Header */}
@@ -57,7 +57,7 @@ export default function Events() {
 
         {/* Custom Tab Switcher */}
         <div className="flex justify-center">
-          <div className="flex bg-[#0F172A] border border-[#1E293B] p-1.5 rounded-xl">
+          <div className="flex bg-surface border border-borderCustom p-1.5 rounded-xl">
             <button
               onClick={() => setActiveTab('upcoming')}
               className={`px-6 py-2 rounded-lg font-inter text-sm font-semibold transition-all duration-300 relative ${
@@ -67,11 +67,11 @@ export default function Events() {
               {activeTab === 'upcoming' && (
                 <motion.div
                   layoutId="activeTabGlow"
-                  className="absolute inset-0 bg-accentBlue rounded-lg -z-10 shadow-btnGlow"
+                  className="absolute inset-0 bg-accentBlue rounded-lg shadow-btnGlow"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
-              Upcoming
+              <span className="relative z-10">Upcoming</span>
             </button>
             <button
               onClick={() => setActiveTab('past')}
@@ -82,11 +82,11 @@ export default function Events() {
               {activeTab === 'past' && (
                 <motion.div
                   layoutId="activeTabGlow"
-                  className="absolute inset-0 bg-accentBlue rounded-lg -z-10 shadow-btnGlow"
+                  className="absolute inset-0 bg-accentBlue rounded-lg shadow-btnGlow"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
-              Past
+              <span className="relative z-10">Past</span>
             </button>
           </div>
         </div>
@@ -128,14 +128,14 @@ export default function Events() {
                         }`}
                       >
                         {/* Timeline Node Point (hidden on mobile) */}
-                        <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-accentSky border-4 border-[#020617] shadow-[0_0_10px_#60a5fa] z-10 hidden md:block" />
+                        <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-accentSky border-4 border-base shadow-[0_0_10px_#60a5fa] z-10 hidden md:block" />
 
                         {/* Card Container */}
                         <div className="w-full md:w-[45%]">
                           <motion.div
                             variants={fadeUp}
                             whileHover={{ scale: 1.02 }}
-                            className="bg-[#0F172A] border border-[#1E293B] hover:border-accentBlue/30 p-6 rounded-2xl hover:shadow-cardGlow transition-colors duration-300"
+                            className="bg-surface border border-borderCustom hover:border-accentBlue/30 p-6 rounded-2xl hover:shadow-cardGlow transition-colors duration-300"
                           >
                             <div className="flex items-center gap-2 text-accentSky mb-3 text-xs font-semibold">
                               <FiClock className="w-4.5 h-4.5" />

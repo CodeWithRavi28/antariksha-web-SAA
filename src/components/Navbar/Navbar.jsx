@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { HiMenu, HiX, HiSun, HiMoon } from 'react-icons/hi';
 import useScrolled from '../../hooks/useScrolled';
 
 // SVG Star Cluster / Telescope Logo
@@ -29,9 +29,13 @@ const LogoIcon = () => (
   </svg>
 );
 
-export default function Navbar() {
+export default function Navbar({ theme = 'night', onToggleTheme }) {
   const scrolled = useScrolled();
   const [isOpen, setIsOpen] = useState(false);
+
+  const isNight = theme === 'night';
+  const ThemeIcon = isNight ? HiSun : HiMoon;
+  const themeLabel = isNight ? 'Day' : 'Night';
 
   const navItems = [
     { name: 'Home', target: 'home' },
@@ -85,8 +89,17 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTA Button */}
-        <div className="hidden lg:block">
+        {/* Desktop Theme Toggle + CTA */}
+        <div className="hidden lg:flex items-center gap-4">
+          <button
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${themeLabel.toLowerCase()} theme`}
+            title={`Switch to ${themeLabel.toLowerCase()} theme`}
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-borderCustom/40 hover:border-accentBlue/60 text-textMuted hover:text-textPrimary font-inter font-medium text-xs uppercase tracking-wider transition-colors duration-200 cursor-pointer"
+          >
+            <ThemeIcon className="w-4 h-4 text-accentSky" />
+            {themeLabel}
+          </button>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSeLToDk1eTq2XZtSyEvlM4N-eGyLYFvqdh0fF8AqOepTIrIyQ/viewform?usp=publish-editor"
             target="_blank"
@@ -97,14 +110,24 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          onClick={toggleMenu}
-          className="lg:hidden text-textPrimary hover:text-accentBlue p-2 focus:outline-none"
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
-        </button>
+        {/* Mobile right-side cluster: theme toggle + hamburger */}
+        <div className="lg:hidden flex items-center gap-2">
+          <button
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${themeLabel.toLowerCase()} theme`}
+            title={`Switch to ${themeLabel.toLowerCase()} theme`}
+            className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-borderCustom/40 hover:border-accentBlue/60 text-textMuted hover:text-textPrimary transition-colors duration-200 cursor-pointer"
+          >
+            <ThemeIcon className="w-4 h-4 text-accentSky" />
+          </button>
+          <button
+            onClick={toggleMenu}
+            className="text-textPrimary hover:text-accentBlue p-2 focus:outline-none"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -115,7 +138,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden w-full bg-[#020617]/95 border-b border-white/10 backdrop-blur-lg overflow-hidden"
+            className="lg:hidden w-full bg-base/95 border-b border-borderCustom/40 backdrop-blur-lg overflow-hidden"
           >
             <div className="flex flex-col px-6 py-6 gap-5">
               {navItems.map((item) => (
@@ -133,6 +156,14 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
+              <button
+                onClick={onToggleTheme}
+                aria-label={`Switch to ${themeLabel.toLowerCase()} theme`}
+                className="inline-flex items-center justify-start gap-2 border border-borderCustom/40 hover:border-accentBlue/60 text-textMuted hover:text-textPrimary font-inter font-medium text-base px-4 py-3 rounded-lg transition-colors duration-200 cursor-pointer"
+              >
+                <ThemeIcon className="w-5 h-5 text-accentSky" />
+                Switch to {themeLabel}
+              </button>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeLToDk1eTq2XZtSyEvlM4N-eGyLYFvqdh0fF8AqOepTIrIyQ/viewform?usp=publish-editor"
                 target="_blank"

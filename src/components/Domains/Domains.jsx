@@ -8,7 +8,7 @@ export default function Domains() {
   return (
     <section
       id="domains"
-      className="relative py-24 bg-[#020617] overflow-hidden px-6 border-t border-white/[0.02]"
+      className="relative py-24 bg-base overflow-hidden px-6 border-t border-borderCustom/15"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Section Header */}

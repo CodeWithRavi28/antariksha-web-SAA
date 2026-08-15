@@ -13,7 +13,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#060b18] border-t border-white/[0.04] text-textMuted font-inter text-sm overflow-hidden">
+    <footer className="bg-base border-t border-borderCustom/20 text-textMuted font-inter text-sm overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-4">
@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 mt-2">
             <a
               href="mailto:antariksha@sliet.ac.in"
-              className="w-8 h-8 rounded-full bg-white/[0.02] border border-white/[0.08] hover:border-accentBlue/60 text-textMuted hover:text-accentSky flex items-center justify-center transition-all duration-300"
+              className="w-8 h-8 rounded-full bg-borderCustom/20 border border-borderCustom/30 hover:border-accentBlue/60 text-textMuted hover:text-accentSky flex items-center justify-center transition-all duration-300"
               aria-label="Email Address"
             >
               <FiMail className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Footer() {
               href="https://instagram.com/sliet_antariksha"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-white/[0.02] border border-white/[0.08] hover:border-accentBlue/60 text-textMuted hover:text-accentSky flex items-center justify-center transition-all duration-300"
+              className="w-8 h-8 rounded-full bg-borderCustom/20 border border-borderCustom/30 hover:border-accentBlue/60 text-textMuted hover:text-accentSky flex items-center justify-center transition-all duration-300"
               aria-label="Instagram Page"
             >
               <FiInstagram className="w-4 h-4" />
@@ -102,10 +102,10 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/[0.04] py-6 text-center text-xs">
+      <div className="border-t border-borderCustom/20 py-6 text-center text-xs">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© 2026 SLIET Antariksha Vigyan Club. All rights reserved.</p>
-          <p className="text-[10px] text-white/20 select-none">
+          <p className="text-[10px] text-textMuted/40 select-none">
             Designed & Developed by Antigravity AI
           </p>
         </div>

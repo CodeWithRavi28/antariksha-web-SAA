@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiTarget, FiEye, FiUser } from 'react-icons/fi';
+import { FiTarget, FiEye, FiExternalLink } from 'react-icons/fi';
 import { FaLinkedin } from 'react-icons/fa';
 import { fadeLeft, fadeRight } from '../../utils/motionVariants';
 import { facultyHead } from '../../data/team';
@@ -10,13 +10,13 @@ import facultyImg from '../../assets/ravi-k-mishra.jpg';
 const OrbitIllustration = () => (
   <div className="relative w-full aspect-square max-w-[420px] mx-auto flex items-center justify-center">
     {/* Glow Background */}
-    <div className="absolute inset-0 rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
+    <div className="absolute inset-0 rounded-full bg-accentBlue/10 blur-3xl pointer-events-none" />
 
     {/* Outer Orbit */}
     <motion.div
       animate={{ rotate: 360 }}
       transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-      className="absolute w-[90%] h-[90%] rounded-full border border-white/5 border-dashed flex items-center justify-center"
+      className="absolute w-[90%] h-[90%] rounded-full border border-borderCustom/45 border-dashed flex items-center justify-center"
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accentBlue/60 shadow-[0_0_12px_#3b82f6]" />
     </motion.div>
@@ -25,7 +25,7 @@ const OrbitIllustration = () => (
     <motion.div
       animate={{ rotate: -360 }}
       transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-      className="absolute w-[70%] h-[70%] rounded-full border border-white/10 flex items-center justify-center"
+      className="absolute w-[70%] h-[70%] rounded-full border border-borderCustom/55 flex items-center justify-center"
     >
       <div className="absolute bottom-0 right-1/4 w-2 h-2 rounded-full bg-accentSky/80 shadow-[0_0_8px_#60a5fa]" />
     </motion.div>
@@ -34,7 +34,7 @@ const OrbitIllustration = () => (
     <motion.div
       animate={{ rotate: 360 }}
       transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-      className="absolute w-[50%] h-[50%] rounded-full border border-white/15 border-double flex items-center justify-center"
+      className="absolute w-[50%] h-[50%] rounded-full border border-borderCustom/65 border-double flex items-center justify-center"
     >
       <div className="absolute top-1/4 right-0 w-1.5 h-1.5 rounded-full bg-purple-500 shadow-[0_0_8px_#a855f7]" />
     </motion.div>
@@ -77,7 +77,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-24 bg-[#020617] overflow-hidden px-6"
+      className="relative py-24 bg-base overflow-hidden px-6"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Column - Visual Illustration */}
@@ -142,10 +142,7 @@ export default function About() {
           </div>
 
           {/* Faculty Advisor Card */}
-          <div className="glass rounded-2xl p-8 mt-4 border border-white/5 shadow-cardGlow relative overflow-hidden">
-            {/* Decorative accent bar */}
-
-
+          <div className="glass rounded-2xl p-8 mt-4 border border-borderCustom/25 shadow-cardGlow relative overflow-hidden">
             <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start justify-between pl-4">
               {/* Left: Avatar + Info */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
@@ -168,23 +165,30 @@ export default function About() {
                   <p className="font-inter text-sm text-accentSky font-medium">
                     Faculty Head & Club Mentor
                   </p>
-                  <p className="font-inter text-sm text-accentSky font-medium bg-accentBlue/10 p-1 rounded-lg w-fit">
-                    Professor & Dean(Alumni and Industrial Relation)
-                  </p>
                   <p className="font-inter text-xs text-textMuted leading-relaxed max-w-sm mt-1">
                     Faculty advisor and guiding mentor of Antariksha — the Space Astronomy Association, inspiring students to explore the frontiers of space science and technology.
                   </p>
                 </div>
               </div>
 
-              {/* Right: LinkedIn Button */}
-              <div className="flex-shrink-0 flex items-center sm:items-start mt-2 sm:mt-1">
+              {/* Right: Portfolio + LinkedIn Buttons */}
+              <div className="flex-shrink-0 flex flex-col sm:flex-row items-center sm:items-start gap-3 mt-2 sm:mt-1">
+                <a
+                  href={facultyHead.portfolio}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-borderCustom/40 hover:border-accentBlue/60 text-textMuted hover:text-accentSky transition-colors duration-300 text-xs font-inter font-medium"
+                  aria-label="Portfolio Website"
+                >
+                  <FiExternalLink className="w-4 h-4" />
+                  Portfolio
+                </a>
                 {facultyHead.linkedin && facultyHead.linkedin !== '#' && (
                   <a
                     href={facultyHead.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 hover:border-accentBlue/60 text-textMuted hover:text-accentSky transition-colors duration-300 text-xs font-inter font-medium"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-borderCustom/40 hover:border-accentBlue/60 text-textMuted hover:text-accentSky transition-colors duration-300 text-xs font-inter font-medium"
                     aria-label="LinkedIn Profile"
                   >
                     <FaLinkedin className="w-4 h-4" />

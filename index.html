@@ -12,8 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
     <title>SLIET Antariksha Vigyan Club</title>
+    <script>
+      // Apply saved theme before first paint to avoid a flash
+      (function () {
+        try {
+          if (localStorage.getItem('antariksha-theme') === 'light') {
+            document.documentElement.classList.add('theme-light');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="bg-[#020617] text-[#F8FAFC] antialiased overflow-x-hidden font-inter">
+  <body class="bg-base text-textPrimary antialiased overflow-x-hidden font-inter">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
