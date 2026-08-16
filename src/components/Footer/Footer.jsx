@@ -99,7 +99,7 @@ export default function Footer() {
 
       {/* Bottom Bar: copyright + quick links */}
       <div className="border-t border-borderCustom/20 py-6">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-between gap-4 text-center text-left ">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-between gap-4 text-center">
           <p className="text-xs">
             © 2026 SLIET Antariksha Vigyan Club. All rights reserved.
           </p>

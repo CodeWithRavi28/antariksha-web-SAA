@@ -16,7 +16,7 @@ export default function MemberCard({ member }) {
   return (
     <div className="bg-surface border border-borderCustom hover:border-accentBlue/30 rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-cardGlow hover:-translate-y-1 transition-all duration-300">
       {/* Avatar: photo if available, otherwise initials gradient */}
-      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-accentBlue to-accentSky flex items-center justify-center text-white font-space font-bold text-2xl mb-4 shadow-lg select-none overflow-hidden">
+      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-accentBlue to-accentSky flex items-center justify-center text-white font-space font-bold text-2xl mb-4 shadow-lg select-none overflow-hidden border-2 border-accentBlue/60">
         {member.photo ? (
           <img
             src={member.photo}

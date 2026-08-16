@@ -14,8 +14,24 @@ export default function Hero({ theme = 'night' }) {
       {/* Starfield background */}
       <StarField theme={theme} />
 
-      {/* Radial blue glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-accentBlue/15 blur-[120px] pointer-events-none z-0" />
+      {/* Radial blue glows */}
+      {/* Central glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vw] h-[85vw] max-w-[850px] max-h-[850px] rounded-full bg-accentBlue/30 blur-[110px] pointer-events-none z-0" />
+      {/* Top-left glow */}
+      <div className="absolute top-[-12%] left-[-12%] w-[55vw] h-[55vw] max-w-[560px] max-h-[560px] rounded-full bg-accentBlue/35 blur-[100px] pointer-events-none z-0" />
+      {/* Bottom-right glow */}
+      <div className="absolute bottom-[-14%] right-[-10%] w-[60vw] h-[60vw] max-w-[620px] max-h-[620px] rounded-full bg-accentSky/30 blur-[105px] pointer-events-none z-0" />
+      {/* Top-right accent glow */}
+      <div className="absolute top-[12%] right-[-8%] w-[35vw] h-[35vw] max-w-[380px] max-h-[380px] rounded-full bg-accentBlue/25 blur-[85px] pointer-events-none z-0" />
+      {/* Bottom-left accent glow */}
+      <div className="absolute bottom-[8%] left-[-10%] w-[40vw] h-[40vw] max-w-[420px] max-h-[420px] rounded-full bg-accentSky/25 blur-[90px] pointer-events-none z-0" />
+      {/* Mid-right glow */}
+      <div className="absolute top-[38%] right-[-14%] w-[45vw] h-[45vw] max-w-[460px] max-h-[460px] rounded-full bg-accentBlue/20 blur-[95px] pointer-events-none z-0" />
+      {/* Mid-left glow */}
+      <div className="absolute bottom-[30%] left-[-16%] w-[42vw] h-[42vw] max-w-[430px] max-h-[430px] rounded-full bg-accentSky/20 blur-[95px] pointer-events-none z-0" />
+
+      {/* Bottom fade - blends the blue glows into the next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-base via-base/60 to-transparent pointer-events-none z-0" />
 
       {/* Content wrapper */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
