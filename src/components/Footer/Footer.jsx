@@ -50,7 +50,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs leading-relaxed">
-              Sant Longowal Institute of Engineering and Technology's official astronomy and space science club.
+              Sant Longowal Institute of Engineering and Technology's official <br/>
+               astronomy and space science club.
             </p>
           </div>
 
@@ -98,11 +99,11 @@ export default function Footer() {
 
       {/* Bottom Bar: copyright + quick links */}
       <div className="border-t border-borderCustom/20 py-6">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-center sm:text-left">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-between gap-4 text-center text-left ">
           <p className="text-xs">
             © 2026 SLIET Antariksha Vigyan Club. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2 text-xs">
+          {/* <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2 text-xs">
             {quickLinks.map((link) => (
               <Link
                 key={link.target}
@@ -115,7 +116,7 @@ export default function Footer() {
                 {link.name}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

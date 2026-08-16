@@ -156,14 +156,7 @@ export default function Navbar({ theme = 'night', onToggleTheme }) {
                   {item.name}
                 </Link>
               ))}
-              <button
-                onClick={onToggleTheme}
-                aria-label={`Switch to ${themeLabel.toLowerCase()} theme`}
-                className="inline-flex items-center justify-start gap-2 border border-borderCustom/40 hover:border-accentBlue/60 text-textMuted hover:text-textPrimary font-inter font-medium text-base px-4 py-3 rounded-lg transition-colors duration-200 cursor-pointer"
-              >
-                <ThemeIcon className="w-5 h-5 text-accentSky" />
-                Switch to {themeLabel}
-              </button>
+              
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeLToDk1eTq2XZtSyEvlM4N-eGyLYFvqdh0fF8AqOepTIrIyQ/viewform?usp=publish-editor"
                 target="_blank"
