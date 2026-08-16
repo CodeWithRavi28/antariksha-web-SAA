@@ -19,6 +19,7 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          className="order-2 lg:order-1"
         >
           <div className="glass rounded-3xl p-8 md:p-10 border border-borderCustom/25 shadow-cardGlow relative overflow-hidden w-full">
             {/* Top Section: Avatar + Info + Portfolio Button */}
@@ -76,7 +77,7 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-col gap-10 lg:pl-8"
+          className="flex flex-col gap-10 lg:pl-8 order-1 lg:order-2"
         >
           <div className="flex flex-col gap-2">
             <span className="text-xs font-semibold tracking-widest uppercase text-accentSky">
